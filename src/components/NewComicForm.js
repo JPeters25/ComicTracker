@@ -19,7 +19,7 @@ function NewComicForm(props){
       <form onSubmit={handleNewComicFormSubmission}>
         <input
           type='text'
-          issue='issues'
+          name='issues'
           placeholder='Comic Issue' />
         <input
           type='text'

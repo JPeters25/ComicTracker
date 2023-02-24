@@ -6,18 +6,22 @@ function ComicList(props){
   return (
     <React.Fragment>
       <hr/>
-      {props.comicList.map((comic, index) =>
-        <Comic issues={comic.issues}
+      {Object.values(props.comicList).map((comic) =>
+        <Comic 
+          whenComicClicked = { props.onComicSelection }
+          issues={comic.issues}
           year={comic.year}
           comments={comic.comments}
-          key={index}/>
+          id={comic.id}
+          key={comic.id}/>
       )}
     </React.Fragment>
   );
 }
 
 ComicList.propTypes = {
-  comicList: PropTypes.array
+  comicList: PropTypes.object,
+  onComicSelection: PropTypes.func
 }
 
 export default ComicList;

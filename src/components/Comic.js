@@ -4,8 +4,11 @@ import PropTypes from "prop-types";
 function Comic(props){
   return (
     <React.Fragment>
-      <h3>{props.issues} - {props.year}</h3>
-      <p><em>{props.comments}</em></p>
+        <div onClick = {() => props.whenComicClicked(props.id)}>
+        <h3>{props.issues} - {props.year}</h3>
+        <p><em>{props.comments}</em></p>
+        <hr/>
+      </div>
     </React.Fragment>
   );
 }
@@ -13,7 +16,9 @@ function Comic(props){
 Comic.propTypes = {
   issues: PropTypes.string.isRequired,
   year: PropTypes.number.isRequired,
-  comments: PropTypes.string
+  comments: PropTypes.string,
+  id: PropTypes.string,
+  whenComicClicked: PropTypes.func
 };
 
 export default Comic;
