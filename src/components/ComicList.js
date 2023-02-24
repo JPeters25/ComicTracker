@@ -1,39 +1,23 @@
 import React from "react";
 import Comic from "./Comic";
+import PropTypes from "prop-types";
 
-const mainComicList = [
-  {
-    issues:'Captain America #1',
-    year:'1963',
-    comments:'Very good' 
-  },
-  {    
-    issues:'Spider-Man #1',
-    year:'1999',
-    comments:'So good, loved it'
-  },
-  {
-    issues:'X-Men #1',
-    year:'1988',
-    comments:'Kinda boring'
-  }
-];
-
-return (
-  <React.Fragment>
-    <hr/>
-    {mainComicList.map((issue, index) =>
-      <Comic issues={Comic.issues}
-          year={ticket.year}
-          comments={ticket.comments}
+function ComicList(props){
+  return (
+    <React.Fragment>
+      <hr/>
+      {props.comicList.map((comic, index) =>
+        <Comic issues={comic.issues}
+          year={comic.year}
+          comments={comic.comments}
           key={index}/>
-    )}
-  </React.Fragment>
-);
+      )}
+    </React.Fragment>
+  );
+}
 
-// function ComicList(){
-//   return (
-//   );
-// }
+ComicList.propTypes = {
+  comicList: PropTypes.array
+}
 
 export default ComicList;

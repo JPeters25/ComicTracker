@@ -1,12 +1,12 @@
 import React from "react";
 import Header from "./Header";
-import ComicList from "./ComicList";
+import ComicControl from "./ComicControl";
 
 function App(){
   return (
     <React.Fragment>
       <Header />
-      <ComicList />
+      <ComicControl />
     </React.Fragment>
   );
 }
